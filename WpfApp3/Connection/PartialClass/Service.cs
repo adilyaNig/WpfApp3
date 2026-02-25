@@ -64,7 +64,7 @@ namespace WpfApp3.Connection
                 {
                     return new BitmapImage(new Uri(@"\Resoers\\school_logo.png",UriKind.Relative));
                 }
-            }
+            } 
         }
 
     }
