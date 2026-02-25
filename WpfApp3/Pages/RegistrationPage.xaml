@@ -1,0 +1,81 @@
+﻿<Page x:Class="WpfApp3.Pages.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp3.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegistrationPage">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center"
+             VerticalAlignment="Center">
+
+            <StackPanel Orientation="Horizontal"
+      HorizontalAlignment="Right">
+                <TextBlock>Фамилия</TextBlock>
+                <TextBox x:Name="LastNameTb"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                 HorizontalAlignment="Right">
+                <TextBlock>Имя</TextBlock>
+                <TextBox x:Name="FirstNameTb"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+HorizontalAlignment="Right">
+                <TextBlock>Отчество</TextBlock>
+                <TextBox x:Name="PatronomicTb"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+HorizontalAlignment="Right">
+                <TextBlock>Дата рождения</TextBlock>
+                <DatePicker x:Name="BirthDateDp"  Width="200" Margin="10 0 5 0"></DatePicker>
+            </StackPanel>
+           
+            
+            <StackPanel Orientation="Horizontal"
+HorizontalAlignment="Right">
+                <TextBlock>Почта</TextBlock>
+                <TextBox x:Name="EmailTb"></TextBox>
+            </StackPanel>
+
+           
+            <StackPanel Orientation="Horizontal"
+HorizontalAlignment="Right">
+                <TextBlock>Телефон</TextBlock>
+                <TextBox x:Name="PhoneTb"></TextBox>
+            </StackPanel>
+            
+            
+            <StackPanel Orientation="Horizontal"
+HorizontalAlignment="Right">
+                <TextBlock><Run Text="Пол"/></TextBlock>
+                <ComboBox x:Name="Gendercmb" Width="200" Margin="20 0 5 0"/>
+            </StackPanel>
+
+            
+            <StackPanel Orientation="Horizontal"
+              HorizontalAlignment="Right">
+                <TextBlock>Логин</TextBlock>
+                <TextBox x:Name="LoginTb"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+   HorizontalAlignment="Right">
+                <TextBlock>Пароль</TextBlock>
+                <TextBox x:Name="PasswordTb"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                 HorizontalAlignment="Center">
+                <Button x:Name="RegistrationBtn" Click="LoginBtn_Click" Width="150">Зарегистрироваться</Button>
+                <Button x:Name="OtmenaBtn" Click="RegistrationTb_Click">Отмена</Button>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Page>
