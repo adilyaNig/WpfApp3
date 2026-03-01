@@ -21,6 +21,7 @@ namespace WpfApp3.Pages
     /// </summary>
     public partial class AvtorizationPage : Page
     {
+        public static User authorizedUser;
         public AvtorizationPage()
         {
             InitializeComponent();
@@ -30,14 +31,15 @@ namespace WpfApp3.Pages
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-            var user = DBConnection.schoolEntities.User.ToList().Find
+            authorizedUser = DBConnection.schoolEntities.User.ToList().Find
                 (x => x.Login == LoginTb.Text && x.Password   
             == PasswordTb.Text); //Find возвращает одну строку 
-            if (user != null)
+            if (authorizedUser != null)
             {
                 NavigationService.Navigate(new ServiceListPage());
             }
-            else { MessageBox.Show("неверный логин или пароль");
+            else
+            { MessageBox.Show("неверный логин или пароль");
               }
         }
         private void RegistrationTb_Click(object sender, RoutedEventArgs e)

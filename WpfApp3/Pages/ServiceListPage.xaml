@@ -15,6 +15,14 @@
             <RowDefinition Height="59*"/>
         </Grid.RowDefinitions>
 
+        <StackPanel Orientation="Horizontal">
+            <TextBlock>Сортировка</TextBlock>
+            <ComboBox x:Name="SortCb" SelectionChanged="SortCb_SelectionChanged">
+                <ComboBoxItem>По умолчанию</ComboBoxItem>
+                <ComboBoxItem>По возрастанию</ComboBoxItem>
+                <ComboBoxItem>По убыванию</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
         <ScrollViewer Margin="5" HorizontalAlignment="Center"
                       HorizontalScrollBarVisibility="Disabled" Grid.Row="1">
             <WrapPanel Name="ServiceWp">
@@ -22,5 +30,11 @@
 
         </WrapPanel>
         </ScrollViewer>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button x:Name="AddBtn">Добавить</Button>
+            <Button x:Name="EntriesBtn">Ближайшие записи</Button>
+            
+        </StackPanel>
     </Grid>
 </Page>

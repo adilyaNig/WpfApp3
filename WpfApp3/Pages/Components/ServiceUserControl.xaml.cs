@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -27,6 +28,11 @@ namespace WpfApp3.Pages.Components
             InitializeComponent();
             service = _service;
             this.DataContext = service;
+            if (AvtorizationPage.authorizedUser.RoleID != 1)
+            {
+                EditBtn.Visibility = Visibility.Collapsed;
+                DeleteBtn.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

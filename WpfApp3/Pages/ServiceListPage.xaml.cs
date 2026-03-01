@@ -24,10 +24,40 @@ namespace WpfApp3.Pages
         public ServiceListPage()
         {
             InitializeComponent();
+            if (AvtorizationPage.authorizedUser.RoleID != 1)
+            {
+                AddBtn.Visibility = Visibility.Collapsed; 
+                EntriesBtn.Visibility = Visibility.Collapsed; 
+            }
             foreach (var service in Connection.DBConnection.schoolEntities.Service.ToList())
             {
                 ServiceWp.Children.Add(new ServiceUserControl(service));
             }
+        }
+
+        private void UpdateListServices()
+        {
+            var services = Connection.DBConnection.schoolEntities.Service.ToList();
+            if(SortCb.SelectedIndex > 0)
+            {
+                if (SortCb.SelectedIndex == 1)
+                {
+                    services = services.OrderBy(x=>x.Cost).ToList();
+                }
+                else if (SortCb.SelectedIndex == 2)
+                {
+                    services = services.OrderByDescending(x => x.Cost).ToList();
+                }
+            }
+            ServiceWp.Children.Clear();
+            foreach (var service in services)
+            {
+                ServiceWp.Children.Add(new ServiceUserControl(service));
+            }
+        }
+        private void SortCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateListServices();
         }
     }
 }

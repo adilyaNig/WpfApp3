@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace WpfApp3.Connection
@@ -62,10 +63,33 @@ namespace WpfApp3.Connection
                 }
                 else
                 {
-                    return new BitmapImage(new Uri(@"\Resoers\\school_logo.png",UriKind.Relative));
+                    return new BitmapImage(new Uri(@"\Resoers\\school_logo.png", UriKind.Relative));
                 }
-            } 
+            }
         }
 
+        public SolidColorBrush BackgroundDiscount
+        {
+            get
+            {
+                if (Discount != null)
+                {
+                    return new SolidColorBrush(Colors.LightGreen);
+                }
+                return new SolidColorBrush(Colors.White);
+            }
+        }
+
+        public decimal CostOfDiscount
+        {
+            get
+            {
+                if (Discount !=null)
+                {
+                    return Cost * (1 - (decimal)Discount);
+                }
+                return Cost;
+            }
+        }
     }
 }
